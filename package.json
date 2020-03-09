@@ -1,0 +1,11 @@
+{
+  "name": "nodeJS_sim",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node src/sensor.js"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0"
+  }
+}
