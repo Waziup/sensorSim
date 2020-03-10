@@ -27,4 +27,4 @@ async function sendData() {
   console.log(JSON.stringify(res));
 };
 
-sendData();
+sendData(); /*manda i dati*/
