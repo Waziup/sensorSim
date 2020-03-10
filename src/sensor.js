@@ -22,7 +22,7 @@ async function sendData() {
 
   withCreds = await getNormalAuth()
   await createDevice(device).set(withCreds)
-  let res = await pushSensorValue(sensor.id, { "value": "25.6", "timestamp": toISOString() })
+  let res = await pushSensorValue(sensor.id, { "value": temp, "timestamp": toISOString() })
   
   console.log(JSON.stringify(res));
 };
