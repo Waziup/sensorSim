@@ -1,6 +1,6 @@
 {
   "valid": {
-    "id": "MyDevice",
+    "id": "Blast",
     "gateway_id": "ea0541de1ab7132a1d45b85f9b2139f5",
     "name": "My weather station",
     "sensors": [
@@ -30,7 +30,7 @@
   },
   "user": {
     "admin": {
-      "username": "cdupont",
+      "username": "blast",
       "password": "password"
     },
     "normal": {
