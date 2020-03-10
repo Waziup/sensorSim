@@ -9,8 +9,8 @@ const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 
 async function getNormalAuth() {
-  const res = await chai.request(baseUrl).post('/auth/token').send(normalCredentials)
-  return { 'authorization': `Bearer ${res.text}` }
+    const res = await chai.request(baseUrl).post('/auth/token').send(normalCredentials)
+    return { 'authorization': `Bearer ${res.text}` }
 }
 
 const pushSensorValue = (id, val) => chai.request(baseUrl).post(`/devices/${device.id}/sensors/${id}/value`).set('content-type', 'application/json').send(val)
@@ -18,13 +18,22 @@ const pushSensorValue = (id, val) => chai.request(baseUrl).post(`/devices/${devi
 const createDevice = (s) => chai.request(baseUrl).post(`/devices`).send(s)
 
 async function sendData() {
-  console.log('Sending...');
+    console.log('Sending...');
 
-  withCreds = await getNormalAuth()
-  await createDevice(device).set(withCreds)
-  let res = await pushSensorValue(sensor.id, { "value": "25.6", "timestamp": "2016-06-08T18:20:27.873Z" })
-  
-  console.log(JSON.stringify(res));
+    withCreds = await getNormalAuth()
+    await createDevice(device).set(withCreds)
+    let res = await pushSensorValue(sensor.id, { "value": temp, "timestamp": new Date() })
+
+    console.log(JSON.stringify(res));
 };
-
+let temp = 20,
+    cont = 3
+let s = setInterval(() => {
+    if (cont == 0) {
+        clearInterval(s)
+    }
+    sendData()
+    temp++
+    cont--
+}, 5000)
 sendData();
