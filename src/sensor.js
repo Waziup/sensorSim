@@ -18,7 +18,6 @@ const pushSensorValue = (id, val) => chai.request(baseUrl).post(`/devices/${devi
 const createDevice = (s) => chai.request(baseUrl).post(`/devices`).send(s)
 
 async function sendData() {
-  console.log('Sending...');
 
   var today = new Date();
 
@@ -26,12 +25,15 @@ async function sendData() {
   await createDevice(device).set(withCreds)
   let res;
   for (var i=0; i<5; i++) {
-    setTimeout(function(){
-      res = await pushSensorValue(sensor.id, { "value": "25"+i, "timestamp": today.toISOString() });
-    }, 1000);
+    console.log('Sending...');
+    await sleep(1000);
+    console.log(JSON.stringify(await pushSensorValue(sensor.id, { "value": "25"+i, "timestamp": today.toISOString() })));
   }
   
-  console.log(JSON.stringify(res));
 };
 
 sendData();
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
