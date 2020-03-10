@@ -1,6 +1,6 @@
 {
   "valid": {
-    "id": "MyDevice",
+    "id": "Liberty",
     "gateway_id": "ea0541de1ab7132a1d45b85f9b2139f5",
     "name": "My weather station",
     "sensors": [
@@ -30,8 +30,8 @@
   },
   "user": {
     "admin": {
-      "username": "cdupont",
-      "password": "password"
+      "username": "waziup",
+      "password": "waziup"
     },
     "normal": {
       "username": "waziup",
