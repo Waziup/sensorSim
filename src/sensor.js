@@ -35,5 +35,6 @@ let s = setInterval(()=>{
   sendData()
   temp++
   cont--
-}, 4000)
+}, 5000)
+
 sendData();
