@@ -3,6 +3,10 @@
     "normal" : {
       "username" : "waziup",
       "password" : "waziup"
+    },
+    "admin": {
+      "username": "cdupont",
+      "password": "password"
     }
   }
 }

@@ -1,12 +1,12 @@
 {
   "valid": {
-    "id": "MyDevice",
+    "id": "FirstWaziDevDevice ",
     "gateway_id": "ea0541de1ab7132a1d45b85f9b2139f5",
     "name": "My weather station",
     "sensors": [
       {
-        "id": "TC1",
-        "name": "My garden temperature",
+        "id": "TC",
+        "name": "My Temperature",
         "quantity_kind": "Temperature",
         "unit": "DegreeCelcius",
         "sensor_kind": "Air temperature sensor"
