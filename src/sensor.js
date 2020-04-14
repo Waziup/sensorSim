@@ -39,4 +39,4 @@ async function sendData(min, max) {
 }
 
 //an interval of 30 minuutes to send random sensor values in the range of 0 to 30
-setInterval(sendData(0, 30), 1800000);
+setInterval(() => sendData(0, 30), 1000);
